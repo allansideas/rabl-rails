@@ -27,7 +27,7 @@ module RablRails
     protected
 
     def api_behavior(error)
-      if post?
+      if post? or put?
         template = if controller.respond_to?(:responder_default_template, true)
           controller.send(:responder_default_template)
         else
